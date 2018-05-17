@@ -124,7 +124,7 @@ class cloudflare_enum:
     def get_spreadsheet( self, domain ):
         dns_data = self.get_domain_dns( domain )
         if dns_data:
-            filename = domain.replace( ".", "_" ) + ".csv"
+            filename = domain + ".csv"
 
             with open( filename, 'wb' ) as csvfile:
                 dns_writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
